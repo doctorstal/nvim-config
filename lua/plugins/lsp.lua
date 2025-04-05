@@ -31,8 +31,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
-    buf_set_keymap('n', 'gwz', '<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>', { desc = 'Open workspace symbol' })
-    buf_set_keymap("n", "gws", '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
+  buf_set_keymap('n', 'gws', '<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>', { desc = 'Open workspace symbol' })
+  buf_set_keymap('n', '<leader>o', '<cmd>lua require("telescope.builtin").lsp_document_symbols()<CR>', { desc = 'Open document symbol' })
 end
 
 

@@ -65,15 +65,16 @@ return { "scalameta/nvim-metals",
 	local telescope = require"telescope"
 
         -- LSP mappings
-        map("n", "gD", vim.lsp.buf.definition)
+        map("n", "gD", vim.lsp.buf.declaration)
+        map("n", "gd", vim.lsp.buf.definition)
         map("n", "K", vim.lsp.buf.hover)
         map("n", "gi", vim.lsp.buf.implementation)
         map("n", "gr", vim.lsp.buf.references)
         map("n", "gds", vim.lsp.buf.document_symbol)
 	
         map('n', '<leader>fc', telescope.extensions.metals.commands, { desc = 'Metals commands' })
-        map('n', 'gwz', require("telescope.builtin").lsp_dynamic_workspace_symbols, { desc = 'Open workspace symbol' })
-        map("n", "gws", vim.lsp.buf.workspace_symbol)
+        map('n', '<leader>o', require("telescope.builtin").lsp_document_symbols, opts)
+        map('n', 'gws', require("telescope.builtin").lsp_dynamic_workspace_symbols, { desc = 'Open workspace symbol' })
         map("n", "<leader>cl", vim.lsp.codelens.run)
         map("n", "<leader>sh", vim.lsp.buf.signature_help)
         map("n", "<leader>rn", vim.lsp.buf.rename)

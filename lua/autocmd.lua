@@ -1,4 +1,4 @@
-local mygroup = vim.api.nvim_create_augroup('vimrc', { clear = true })
+local mygroup = vim.api.nvim_create_augroup('wall_on_edit', { clear = true })
 vim.api.nvim_create_autocmd({ 'BufLeave', 'FocusLost', 'TextChanged' }, {
   pattern = '*',
   group = mygroup,
